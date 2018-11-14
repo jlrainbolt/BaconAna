@@ -56,6 +56,7 @@ namespace baconhep
       float          mvaCat;                                   // electron ID MVA category
       float          mvaIso;                                   // electron ID Iso MVA value
       float          mvaIsoCat;                                // electron ID Iso MVA category
+      float          mvaHZZ;                                   // electron HZZ ID MVA value      
       float          regscale,regsmear;                        //Regression scale and smear corrections
       int            q;                                        // charge
       bool           isCC;                                     // isGsfCtfChargeConsistent (3 charge verification)
