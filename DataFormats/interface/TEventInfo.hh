@@ -31,7 +31,8 @@ namespace baconhep
       //trkMET(0), trkMETphi(0),
       rhoIso(0), rhoJet(0),
       triggerBits(0),
-      hasGoodPV(false)
+      hasGoodPV(false),
+      ecalWeight(0), ecalWeightUp(0), ecalWeightDown(0)
       {}
       ~TEventInfo(){}
 
@@ -63,6 +64,7 @@ namespace baconhep
       float         rhoIso, rhoJet;                            // event energy density
       TriggerBits   triggerBits;                               // fired trigger bits
       bool          hasGoodPV;                                 // event has a good PV?
+      float         ecalWeight, ecalWeightUp, ecalWeightDown;   // probability of L1 ECAL prefiring (+/- 1 sigma)
 
     ClassDef(TEventInfo,8)
   };
