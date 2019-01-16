@@ -10,9 +10,8 @@ namespace baconhep
   {
     public:
       TElectron():
-      pt(0), eta(0), phi(0),
+      pt(0), eta(0), phi(0), et(0), energy(0),
       scEt(0), scEta(0), scPhi(0), ecalEnergy(0),
-      calibPt(0), calibE(0),
       pfPt(0), pfEta(0), pfPhi(0),
       trkIso(-1), ecalIso(-1), hcalIso(-1), hcalDepth1Iso(-1),
       chHadIso(-1), gammaIso(-1), neuHadIso(-1), puIso(-1),
@@ -24,8 +23,12 @@ namespace baconhep
       sieie(0), e1x5(0), e2x5(0), e5x5(0), r9(0),
       eoverp(0), hovere(0), fbrem(0),
       dEtaInSeed(0), dEtaIn(0), dPhiIn(0),
-      mva(-999.), mvaCat(-999.),
-      mvaIso(-999.), mvaIsoCat(-999.),
+      mva2016HZZ(-999.), cat2016HZZ(-999.), pass2016HZZwpLoose(0),
+      mva2017isoV2(-999.), cat2017isoV2(-999.), pass2017isoV2wpHZZ(0),
+      mva2017noIsoV2(-999.), cat2017noIsoV2(-999.), 
+      ecalTrkEnergyPreCorr(0), ecalTrkEnergyPostCorr(0),
+      energyScaleUp(0), energyScaleDown(0),
+      energySigmaUp(0), energySigmaDown(0),
       regscale(0.),regsmear(0.),
       q(0), isCC(false),
       isConv(false), nMissingHits(0),
@@ -35,41 +38,45 @@ namespace baconhep
       {}
       ~TElectron(){}
     
-      float          pt, eta, phi;                             // kinematics
-      float          scEt, scEta, scPhi;                       // supercluster kinematics
-      float          ecalEnergy;                               // ECAL energy
-      float          calibPt, calibE;                          // calibrated kinematics
-      float          pfPt, pfEta, pfPhi;                       // matching PF-candidate kinematics
-      float          trkIso, ecalIso, hcalIso, hcalDepth1Iso;  // detector isolation
-      float          chHadIso, gammaIso, neuHadIso, puIso;     // PF isolation variables
-      float          ecalPFClusIso, hcalPFClusIso;             // PF cluster isolation variables
-      float          puppiChHadIso,      puppiGammaIso,      puppiNeuHadIso;  // Puppi Isolation R=0.4
-      float          puppiChHadIsoNoLep, puppiGammaIsoNoLep, puppiNeuHadIsoNoLep; // Puppi Isolation R=0.4 no lep
-      float          d0, dz, sip3d;                            // impact parameter
-      float          x, y, z;                               // position of innermost (reference) point of best track
-      float          sieie, e1x5, e2x5, e5x5, r9;              // shower shape
-      float          eoverp;                                   // E/p
-      float          hovere;                                   // H/E
-      float          fbrem;                                    // brem fraction
-      float          dEtaInSeed, dEtaIn, dPhiIn;               // track-supercluster matching
-      float          mva;                                      // electron ID MVA value
-      float          mvaCat;                                   // electron ID MVA category
-      float          mvaIso;                                   // electron ID Iso MVA value
-      float          mvaIsoCat;                                // electron ID Iso MVA category
-      float          regscale,regsmear;                        //Regression scale and smear corrections
-      int            q;                                        // charge
-      bool           isCC;                                     // isGsfCtfChargeConsistent (3 charge verification)
-      bool           isConv;                                   // identified by track fit based conversion finder?
-      unsigned int   nMissingHits;                             // number of missing expected inner hits 
-      unsigned int   typeBits;                                 // electron type
-      unsigned int   fiducialBits;                             // ECAL fiducial region bits
-      unsigned int   mvaBit;                                   // Pass Ele MVA working point
-      unsigned int   mvaIsoBit;                                // Pass Ele Iso MVA working point
-      int            classification;                           // electron classification
-      int            scID;                                     // supercluster ID number (unique per event)
-      int            trkID;                                    // track ID number (unique per event)
-      unsigned int   eleIndex;                                 // unique index identifying the muon
-      TriggerObjects hltMatchBits;                             // HLT matches
+      float         pt, eta, phi, et, energy;                   // kinematics
+      float         scEt, scEta, scPhi;                         // supercluster kinematics
+      float         ecalEnergy;                                 // ECAL energy
+      float         pfPt, pfEta, pfPhi;                         // matching PF-candidate kinematics
+      float         trkIso, ecalIso, hcalIso, hcalDepth1Iso;    // detector isolation
+      float         chHadIso, gammaIso, neuHadIso, puIso;       // PF isolation variables
+      float         ecalPFClusIso, hcalPFClusIso;               // PF cluster isolation variables
+      float         puppiChHadIso,      puppiGammaIso,      puppiNeuHadIso;  // Puppi Isolation R=0.4
+      float         puppiChHadIsoNoLep, puppiGammaIsoNoLep, puppiNeuHadIsoNoLep; // Puppi Isolation R=0.4 no lep
+      float         d0, dz, sip3d;                              // impact parameter
+      float         x, y, z;                                    // position of innermost (reference) point of best track
+      float         sieie, e1x5, e2x5, e5x5, r9;                // shower shape
+      float         eoverp;                                     // E/p
+      float         hovere;                                     // H/E
+      float         fbrem;                                      // brem fraction
+      float         dEtaInSeed, dEtaIn, dPhiIn;                 // track-supercluster matching
+      float         mva2016HZZ;                                 // MVA value (2016 legacy)
+      int           cat2016HZZ;                                 // MVA category (2016 legacy)
+      bool          pass2016HZZwpLoose;                         // bool for 2016 HZZ working point
+      float         mva2017isoV2;                               // MVA value (2017v2 with iso)
+      int           cat2017isoV2;                               // MVA category (2017 v2 with iso)
+      bool          pass2017isoV2wpHZZ;                         // bool for 2017 HZZ working point
+      float         mva2017noIsoV2;                             // MVA value (2017v2 without iso)
+      int           cat2017noIsoV2;                             // MVA category (2017 v2 without iso)
+      float         ecalTrkEnergyPreCorr, ecalTrkEnergyPostCorr;// energies for scale/smear correction
+      float         energyScaleUp, energyScaleDown;             // scale systematics
+      float         energySigmaUp, energySigmaDown;             // smear systematics
+      float         regscale,regsmear;                          // Regression scale and smear corrections
+      int           q;                                          // charge
+      bool          isCC;                                       // isGsfCtfChargeConsistent (3 charge verification)
+      bool          isConv;                                     // identified by track fit based conversion finder?
+      unsigned int  nMissingHits;                               // number of missing expected inner hits 
+      unsigned int  typeBits;                                   // electron type
+      unsigned int  fiducialBits;                               // ECAL fiducial region bits
+      int           classification;                             // electron classification
+      int           scID;                                       // supercluster ID number (unique per event)
+      int           trkID;                                      // track ID number (unique per event)
+      unsigned int  eleIndex;                                   // unique index identifying the electron
+      TriggerObjects hltMatchBits;                              // HLT matches
       
     ClassDef(TElectron,7)
   };
