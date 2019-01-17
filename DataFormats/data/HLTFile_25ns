@@ -74,19 +74,22 @@ HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_v*                                     hltL3f
 HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_v*                                     hltDiMuonGlb17Trk8RelTrkIsoFiltered0p4                                            2
 HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*                                  hltL3fL1sDoubleMu114L1f0L2f10L3Filtered17                                         1
 HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*                                  hltDiMuonGlb17Trk8RelTrkIsoFiltered0p4                                            2
-HLT_TkMu17_TrkIsoVVL_TkMu8_TrkIsoVVL_v*
-HLT_TkMu17_TrkIsoVVL_TkMu8_TrkIsoVVL_v*
-HLT_TkMu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*
-HLT_TkMu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*
 HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8_v*                            hltL3fL1DoubleMu155fFiltered17                                                    1
 HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8_v*                            hltDiMuon178RelTrkIsoFiltered0p4                                                  2 
-HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass8_v*
-HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass8_v*
+HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass8_v*                            hltL3fL1DoubleMu155fFiltered17                                                      1
+HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass8_v*                            hltDiMuon178RelTrkIsoFiltered0p4                                                    2 
+HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_v*                                       hltL3fL1sDoubleMu114L1f0L2f10OneMuL3Filtered17                                    1
+HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_v*                                       hltDiMuonGlb17Glb8RelTrkIsoFiltered0p4                                            2
+HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_v*                                    hltL3fL1sDoubleMu114L1f0L2f10OneMuL3Filtered17                                    1
+HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_v*                                    hltDiMuonGlb17Glb8RelTrkIsoFiltered0p4                                            2
+HLT_TkMu17_TrkIsoVVL_TkMu8_TrkIsoVVL_v*                                   hltL3fL1sDoubleMu114TkFiltered17Q                                                 1
+HLT_TkMu17_TrkIsoVVL_TkMu8_TrkIsoVVL_v*                                   hltDiMuonTrk17Trk8RelTrkIsoFiltered0p4                                            2
+HLT_TkMu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*                                hltL3fL1sDoubleMu114TkFiltered17Q                                                 1
+HLT_TkMu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*                                hltDiMuonTrk17Trk8RelTrkIsoFiltered0p4                                            2
 HLT_DoubleIsoMu17_eta2p1_v*                                               hltL3crIsoL1sDoubleMu125L1f16erL2f10QL3f17QL3Dz0p2L3crIsoRhoFiltered0p15IterTrk02 1
 HLT_DoubleIsoMu17_eta2p1_noDzCut_v*                                       hltL3crIsoL1sDoubleMu125L1f16erL2f10QL3f17QL3L3crIsoRhoFiltered0p15IterTrk02      1
 HLT_Mu8_TrkIsoVVL_v*                                                      hltL3fL1sMu5L1f0L2f5L3Filtered8TkIsoFiltered0p4                                   1
 HLT_Mu17_TrkIsoVVL_v*                                                     hltL3fL1sMu1lqL1f0L2f10L3Filtered17TkIsoFiltered0p4                               1
-HLT_TkMu17_v*
 HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v*                         hltMu8TrkIsoVVLEle23CaloIdLTrackIdLIsoVLMuonlegL3IsoFiltered8                     1
 HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v*                         hltMu8TrkIsoVVLEle23CaloIdLTrackIdLIsoVLElectronlegTrackIsoFilter                 2
 HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v*                      hltMu8TrkIsoVVLEle23CaloIdLTrackIdLIsoVLMuonlegL3IsoFiltered8                     1
