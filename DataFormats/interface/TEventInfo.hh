@@ -32,7 +32,7 @@ namespace baconhep
       rhoIso(0), rhoJet(0),
       triggerBits(0),
       hasGoodPV(false),
-      ecalWeight(0), ecalWeightUp(0), ecalWeightDown(0)
+      ecalWeight(1), ecalWeightUp(1), ecalWeightDown(1)
       {}
       ~TEventInfo(){}
 
