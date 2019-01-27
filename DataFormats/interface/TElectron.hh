@@ -23,9 +23,11 @@ namespace baconhep
       sieie(0), e1x5(0), e2x5(0), e5x5(0), r9(0),
       eoverp(0), hovere(0), fbrem(0),
       dEtaInSeed(0), dEtaIn(0), dPhiIn(0),
-      mva2016HZZ(-999.), cat2016HZZ(-999.), pass2016HZZwpLoose(0),
-      mva2017isoV2(-999.), cat2017isoV2(-999.), pass2017isoV2wpHZZ(0),
-      mva2017noIsoV2(-999.), cat2017noIsoV2(-999.), 
+      mva2016HZZ(-999.), pass2016HZZwpLoose(0),
+      mva2017isoV1(-999.), pass2017isoV1wpLoose(0),
+      mva2017noIsoV1(-999.), pass2017noIsoV1wpLoose(0), 
+      mva2017isoV2(-999.), pass2017isoV2wpLoose(0), pass2017isoV2wpHZZ(0),
+      mva2017noIsoV2(-999.), pass2017noIsoV2wpLoose(0), 
       ecalTrkEnergyPreCorr(0), ecalTrkEnergyPostCorr(0),
       energyScaleUp(0), energyScaleDown(0),
       energySigmaUp(0), energySigmaDown(0),
@@ -55,13 +57,15 @@ namespace baconhep
       float         fbrem;                                      // brem fraction
       float         dEtaInSeed, dEtaIn, dPhiIn;                 // track-supercluster matching
       float         mva2016HZZ;                                 // MVA value (2016 legacy)
-      int           cat2016HZZ;                                 // MVA category (2016 legacy)
-      bool          pass2016HZZwpLoose;                         // bool for 2016 HZZ working point
+      bool          pass2016HZZwpLoose;                         // bool for loose working point
+      float         mva2017isoV1;                               // MVA value (2017v1 with iso)
+      bool          pass2017isoV1wpLoose;                       // bool for loose working point
+      float         mva2017noIsoV1;                             // MVA value (2017v1 no iso)
+      bool          pass2017noIsoV1wpLoose;                     // bool for loose working point
       float         mva2017isoV2;                               // MVA value (2017v2 with iso)
-      int           cat2017isoV2;                               // MVA category (2017 v2 with iso)
-      bool          pass2017isoV2wpHZZ;                         // bool for 2017 HZZ working point
-      float         mva2017noIsoV2;                             // MVA value (2017v2 without iso)
-      int           cat2017noIsoV2;                             // MVA category (2017 v2 without iso)
+      bool          pass2017isoV2wpLoose, pass2017isoV2wpHZZ;   // bools for loose, HZZ working points
+      float         mva2017noIsoV2;                             // MVA value (2017v2 no iso)
+      bool          pass2017noIsoV2wpLoose;                     // bool for loose working point
       float         ecalTrkEnergyPreCorr, ecalTrkEnergyPostCorr;// energies for scale/smear correction
       float         energyScaleUp, energyScaleDown;             // scale systematics
       float         energySigmaUp, energySigmaDown;             // smear systematics
@@ -78,7 +82,7 @@ namespace baconhep
       unsigned int  eleIndex;                                   // unique index identifying the electron
       TriggerObjects hltMatchBits;                              // HLT matches
       
-    ClassDef(TElectron,7)
+    ClassDef(TElectron,8)
   };
 
   enum EEleType
