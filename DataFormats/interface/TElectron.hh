@@ -28,9 +28,14 @@ namespace baconhep
       mva2017noIsoV1(-999.), pass2017noIsoV1wpLoose(0), 
       mva2017isoV2(-999.), pass2017isoV2wpLoose(0), pass2017isoV2wpHZZ(0),
       mva2017noIsoV2(-999.), pass2017noIsoV2wpLoose(0), 
-      ecalTrkEnergyPreCorr(0), ecalTrkEnergyPostCorr(0),
-      energyScaleUp(0), energyScaleDown(0),
-      energySigmaUp(0), energySigmaDown(0),
+      ecalTrkEnergyPreCorr(0), ecalTrkEnergyErrPreCorr(0),
+      ecalTrkEnergyPostCorr(0), ecalTrkEnergyErrPostCorr(0),
+      energySmearNrSigma(0),
+      energyScaleValue(0), energyScaleUp(0), energyScaleDown(0),
+      energyScaleStatUp(0), energyScaleStatDown(0), energyScaleSystUp(0), energyScaleSystDown(0),
+      energyScaleGainUp(0), energyScaleGainDown(0), energyScaleEtUp(0), energyScaleEtDown(0),
+      energySigmaValue(0), energySigmaUp(0), energySigmaDown(0),
+      energySigmaPhiUp(0), energySigmaPhiDown(0), energySigmaRhoUp(0), energySigmaRhoDown(0),
       regscale(0.),regsmear(0.),
       q(0), isCC(false),
       isConv(false), nMissingHits(0),
@@ -66,9 +71,17 @@ namespace baconhep
       bool          pass2017isoV2wpLoose, pass2017isoV2wpHZZ;   // bools for loose, HZZ working points
       float         mva2017noIsoV2;                             // MVA value (2017v2 no iso)
       bool          pass2017noIsoV2wpLoose;                     // bool for loose working point
-      float         ecalTrkEnergyPreCorr, ecalTrkEnergyPostCorr;// energies for scale/smear correction
-      float         energyScaleUp, energyScaleDown;             // scale systematics
-      float         energySigmaUp, energySigmaDown;             // smear systematics
+      float         ecalTrkEnergyPreCorr, ecalTrkEnergyErrPreCorr;      // energy before correction
+      float         ecalTrkEnergyPostCorr, ecalTrkEnergyErrPostCorr;    // energy after correction
+      float         energySmearNrSigma;                         // random number used to smear
+      float         energyScaleValue, energyScaleUp, energyScaleDown;   // scale systematics
+      float         energyScaleStatUp, energyScaleStatDown;
+      float         energyScaleSystUp, energyScaleSystDown;
+      float         energyScaleGainUp, energyScaleGainDown;
+      float         energyScaleEtUp, energyScaleEtDown;
+      float         energySigmaValue, energySigmaUp, energySigmaDown;   // smear systematics
+      float         energySigmaPhiUp, energySigmaPhiDown;
+      float         energySigmaRhoUp, energySigmaRhoDown;
       float         regscale,regsmear;                          // Regression scale and smear corrections
       int           q;                                          // charge
       bool          isCC;                                       // isGsfCtfChargeConsistent (3 charge verification)
