@@ -25,6 +25,7 @@ namespace baconhep
       trkHitFrac(0), chi2LocPos(-999.), segComp(-999.), caloComp(-999.),
       q(0),
       nValidHits(0),
+      isTrackerHighPt(0),
       typeBits(0), selectorBits(0), pogIDBits(0),
       nTkHits(0), nPixHits(0),
       nTkLayers(0), nPixLayers(0),
@@ -54,6 +55,7 @@ namespace baconhep
       float          caloComp;                              // muon hypothesis compatibility with calo energy
       int            q;                                     // charge
       int            nValidHits;                            // number of valid muon hits in global fit
+      bool           isTrackerHighPt;                       // passes *new* selector for TrkHighPt
       unsigned int   typeBits;                              // muon type bits
       unsigned int   selectorBits;                          // MuonSelector bits
       unsigned int   pogIDBits;                             // POG muon IDs from CMSSW
@@ -62,7 +64,7 @@ namespace baconhep
       unsigned int   nMatchStn;                             // number of stations with muon segments
       int            trkID;                                 // tracker track ID (unique per event)
       int            btt;                                   // best track type
-      unsigned int            muIndex;                               // unique index identifying the muon
+      unsigned int   muIndex;                               // unique index identifying the muon
       TriggerObjects hltMatchBits;                          // HLT matching
           
     ClassDef(TMuon,4)
